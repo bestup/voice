@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			console.log("123")
+			/* var url = "http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=2&text=微信收款10元"
+			var n = new Audio();
+			n.src = url;
+			n.play(); */
+			voiceBroadcast("陕A12345加油1035元");
+			
+			//每隔一分钟播报一次
+			 /* var voiceBroadcastTimer = $interval(() => {
+			   // $scope.voiceBroadcast("微信收款10元");
+				console.log("123")
+			 }, 6000); */
+			
+			//关闭页面时清除定时任务
+			 /* $scope.$on('$destroy', () => {
+			      $interval.cancel(voiceBroadcastTimer);
+			  }); */
+			  function voiceBroadcast(text){
+			       var url = "http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&text=" + encodeURI(text);        // baidu文字转语音
+			       var voiceContent = new Audio(url);
+			       voiceContent.src = url;
+			       voiceContent.play();
+			   };
+			  
+		</script>
+	</body>
+</html>
