@@ -25,6 +25,7 @@
 			  }); */
 			  function voiceBroadcast(text){
 			       var url = "http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&text=" + encodeURI(text);        // baidu文字转语音
+				   //var url = "http://fanyi.sogou.com/reventondc/microsoftGetSpeakFile?from=translateweb&amp;spokenDialect=zh-CHS&amp;text="+text
 			       var voiceContent = new Audio(url);
 			       voiceContent.src = url;
 			       voiceContent.play();
